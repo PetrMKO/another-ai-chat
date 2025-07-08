@@ -1,0 +1,56 @@
+@use "@/styles/abstracts/variables" as *;
+
+.textContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  height: auto;
+  transform: translateY(24px);
+  background: $fill-gray;
+  border-radius: 12px;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 234px);
+  padding-bottom: 40px;
+}
+
+.textarea {
+  padding: 16px;
+  background-color: $secondary-gray;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  width: 100%;
+  resize: none;
+  min-height: 40px;
+  max-height: 128px;
+  border: none;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  transition: border 0.2s;
+  overflow-y: auto;
+  color: $text-white
+}
+
+.sendButton {
+  padding: 16px;
+  background: $secondary-gray;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  flex-shrink: 0;
+  appearance: none;
+  border: none;
+  color: $text-white;
+  height: 54px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s;
+
+  &:disabled {
+    background: $secondary-gray;
+    cursor: not-allowed;
+  }
+}
+

@@ -1,0 +1,47 @@
+@use '@/styles/abstracts/variables' as *;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //background: rgba(20, 20, 30, 0.30); // Сделал фон темнее и более насыщенным
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+
+  // Glassmorphism эффекты
+  backdrop-filter: blur(3px) saturate(100%);
+  -webkit-backdrop-filter: blur(7px) saturate(160%);
+  box-shadow: 0 0 120px 0 rgba(0,0,0,0.24);
+}
+
+.modal {
+  position: relative;
+  background: $secondary-gray;
+  border-radius: 12px;
+  padding: 32px 24px 24px 24px;
+  min-width: 320px;
+  max-width: 92vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 12px 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: $text-white;
+  text-align: center;
+}
+
+.content {
+  font-size: 16px;
+  color: $text-white;
+  text-align: center;
+  margin-bottom: 10px;
+}

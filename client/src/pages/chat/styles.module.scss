@@ -1,0 +1,53 @@
+@use "@/styles/abstracts/variables" as *;
+
+.content {
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.chat{
+  display: block;
+  flex: 1;
+  padding-bottom: 100px;
+}
+
+.messageWrapper {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.message {
+  padding: 0 20px;
+  max-width: 80%;
+  width: fit-content;
+  border: 1px solid $border-gray;
+  border-radius: 12px;
+
+  pre {
+    background: $border-gray;
+    padding: 8px;
+    border-radius: 4px;
+
+    code {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}
+
+.userMessage {
+  background-color: $secondary-gray;
+  margin-left: auto;
+}
+
+.botMessage {
+  background-color: $secondary-gray;
+  margin-right: auto;
+}
+
+.error {
+  background-color: rgba(248, 68, 68, 0.31);
+}

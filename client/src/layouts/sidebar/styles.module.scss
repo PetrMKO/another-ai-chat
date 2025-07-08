@@ -1,0 +1,102 @@
+@use "@/styles/abstracts/variables" as *;
+
+.routeButton {
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s;
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $text-white;
+  width: 100%;
+
+  &:hover {
+    border: 1px solid $border-gray
+  }
+
+  &:active {
+    background-color: $violet-contrast;
+    color: #181818
+  }
+
+  &.active {
+    background-color: $violet-contrast;
+    color: #181818
+  }
+}
+.sidebar {
+  padding: 12px;
+  height: 100%;
+  width: 175px;
+  background-color: $secondary-gray;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-right: 1px solid $border-gray;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    .chats {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid $border-gray;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: auto;
+      gap: 8px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.configDescription {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid $border-gray;
+  background-color: lighten($secondary-gray, 5);
+
+  .title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .setting {
+    display: flex;
+    flex-direction: column;
+    //gap: 4px;
+    align-items: flex-start;
+    //padding: 4px 0;
+  }
+
+  .configText{
+    font-size: 0.8em;
+    font-weight: 200;
+    padding-left: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}

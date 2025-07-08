@@ -1,0 +1,61 @@
+@use '@/styles/abstracts/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid;
+  min-height: 40px;
+  color: $text-white;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: $violet-contrast;
+  color: $text-white;
+  border-color: $violet-contrast;
+
+  &:hover:not(:disabled) {
+    background-color: darken($violet-contrast, 10%);
+    border-color: darken($violet-contrast, 10%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: darken($violet-contrast, 15%);
+    border-color: darken($violet-contrast, 15%);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: $text-white;
+  border-color: $border-gray;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($secondary-gray, 0.5);
+    border-color: lighten($border-gray, 10%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba($secondary-gray, 0.7);
+    border-color: lighten($border-gray, 15%);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

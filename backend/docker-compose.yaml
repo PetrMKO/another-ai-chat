@@ -1,0 +1,48 @@
+version: "3.2"
+#x-postgres-common:
+#  &postgres-common
+#  image: postgres:14-alpine
+#  user: postgres
+#  restart: always
+#  healthcheck:
+#    test: 'pg_isready -U postgres --dbname=postgres'
+#    interval: 10s
+#    timeout: 5s
+#    retries: 5
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    restart: always
+    ports:
+      - "6333:6333"  # REST API
+    volumes:
+      - ./qdrant_data:/qdrant/storage
+#  corp_chat_db:
+#    <<: *postgres-common
+#    ports:
+#      - 5432:5432
+#    environment:
+#      POSTGRES_USER: ${DB_USER}
+#      POSTGRES_DB: ${DB_NAME}
+#      POSTGRES_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - master-data:/var/lib/postgresql/data
+
+  app:
+    depends_on:
+      corp_chat_db:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USER: ${DB_USER}
+      DB_NAME: ${DB_NAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@host.docker.internal:5432/postgres

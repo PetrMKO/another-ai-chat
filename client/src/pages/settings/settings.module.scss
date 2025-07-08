@@ -1,0 +1,118 @@
+@use "@/styles/abstracts/variables" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex-shrink: 4;
+  height: 100%;
+  box-sizing: border-box;
+
+  .settingContainer {
+    flex-shrink: 4;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 1px solid $border-gray;
+    background-color: $fill-gray;
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  transform: translateY(1px);
+  width: 100%;
+  flex-grow: 0;
+
+  .tab {
+    cursor: pointer;
+    background-color: $fill-gray;
+    padding: 12px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border: 1px solid $border-gray;
+    color: $text-white
+  }
+
+  .tab.selected {
+    border-bottom: none;
+  }
+}
+
+.formWrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+
+  .content {
+    flex-shrink: 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer {
+    height: auto;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    flex-direction: row-reverse;
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+
+.ragInputWrapper {
+  padding: 10px;
+  border: 1px solid $border-gray;
+  border-radius: 4px;
+  flex-grow: 4;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.uploadRag {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+
+  .uploadButton {
+    background: rgba(96, 216, 81, 0.86);
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+    border: none;
+  }
+}
+
+.existRag {
+  display: flex;
+  gap: 8px;
+
+  .ragName {
+    width: 100%;
+  }
+
+  .deleteBtn {
+    background: rgba(236, 76, 76, 0.86);
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+    border: none;
+  }
+}
+
