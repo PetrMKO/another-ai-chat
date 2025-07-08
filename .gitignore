@@ -8,7 +8,7 @@
 
 
 /backend/.idea
-/backend/.venv
+/backend/venv
 /backend/.vscode
 /backend/.env
 /backend/qdrant_data
