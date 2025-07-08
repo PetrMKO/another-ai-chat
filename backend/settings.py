@@ -10,8 +10,8 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DATABASE_URL=os.getenv("DATABASE_URL")
 COLLECTION_NAME='chat_files'
-CHUNK_SIZE=1200
-CHUNK_OVERLAP=120
+CHUNK_SIZE=1024
+CHUNK_OVERLAP=102
 TOP_K=10
 
 RAG_CONTEXT_ADDITION='\n На все вопросы отвечай, отталкиваясь от контекста, представленного ниже:\n'

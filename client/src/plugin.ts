@@ -4,7 +4,7 @@ async function bootstrap() {
     figma.showUI(__html__, {
       width: 800,
       height: 650,
-      title: "Corp chat",
+      title: "Another chat",
     });
 
     // После загрузки UI — отправляем запрос на получение userId
